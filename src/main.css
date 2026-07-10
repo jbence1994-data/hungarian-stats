@@ -5,22 +5,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Nova theme — cosmic violet palette layered on Tailwind's base (Preflight). */
 @theme {
-  --color-nova-50: #f5f3ff;
-  --color-nova-100: #ede9fe;
-  --color-nova-200: #ddd6fe;
-  --color-nova-300: #c4b5fd;
-  --color-nova-400: #a78bfa;
-  --color-nova-500: #8b5cf6;
-  --color-nova-600: #7c3aed;
-  --color-nova-700: #6d28d9;
-  --color-nova-800: #5b21b6;
-  --color-nova-900: #4c1d95;
-  --color-nova-950: #2e1065;
-
-  --color-nova-accent: var(--color-nova-500);
-
   --font-sans: system-ui, 'Segoe UI', Roboto, sans-serif;
   --font-mono: ui-monospace, Consolas, monospace;
 }
