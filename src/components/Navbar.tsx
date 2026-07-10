@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router'
 
+import { ModeToggle } from '@/components/ModeToggle'
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -24,20 +25,23 @@ export const Navbar = () => {
         <Link to="/" className="text-lg font-semibold text-nova-600 dark:text-nova-400">
           Hungarian Stats
         </Link>
-        <NavigationMenu>
-          <NavigationMenuList>
-            {links.map((link) => (
-              <NavigationMenuItem key={link.to}>
-                <NavigationMenuLink
-                  render={<Link to={link.to} />}
-                  className={cn(pathname === link.to && 'bg-muted/50')}
-                >
-                  {link.label}
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-            ))}
-          </NavigationMenuList>
-        </NavigationMenu>
+        <div className="flex items-center gap-2">
+          <NavigationMenu>
+            <NavigationMenuList>
+              {links.map((link) => (
+                <NavigationMenuItem key={link.to}>
+                  <NavigationMenuLink
+                    render={<Link to={link.to} />}
+                    className={cn(pathname === link.to && 'bg-muted/50')}
+                  >
+                    {link.label}
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              ))}
+            </NavigationMenuList>
+          </NavigationMenu>
+          <ModeToggle />
+        </div>
       </div>
     </header>
   )
