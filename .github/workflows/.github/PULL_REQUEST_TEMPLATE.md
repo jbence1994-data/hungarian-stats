@@ -1,7 +1,6 @@
 ### :white_check_mark: Checklist
 
 - [ ] Tested locally with `bun run dev`
-- [ ] New or updated unit tests cover the changes
 - [ ] AI-generated code has been manually reviewed and understood
 - [ ] `CLAUDE.md` updated
 
