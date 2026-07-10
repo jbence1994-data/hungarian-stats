@@ -1,10 +1,10 @@
-import { Route, Routes } from 'react-router'
+import { Route, Routes } from 'react-router';
 
-import { Layout } from '@/components/Layout'
+import { Layout } from '@/components/Layout';
 
-import { EconomyPage } from '@/pages/Economy'
-import { OverviewPage } from '@/pages/Overview'
-import { PopulationPage } from '@/pages/Population'
+import { EconomyPage } from '@/pages/Economy';
+import { OverviewPage } from '@/pages/Overview';
+import { PopulationPage } from '@/pages/Population';
 
 const App = () => {
   return (
@@ -15,7 +15,7 @@ const App = () => {
         <Route path="economy" element={<EconomyPage />} />
       </Route>
     </Routes>
-  )
-}
+  );
+};
 
-export default App
+export default App;

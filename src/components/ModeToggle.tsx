@@ -1,11 +1,11 @@
-import { Button } from '@/components/ui/button'
+import { Button } from '@/components/ui/button';
 
-import { useTheme } from '@/lib/theme'
+import { useTheme } from '@/lib/theme';
 
-import { Moon, Sun } from 'lucide-react'
+import { Moon, Sun } from 'lucide-react';
 
 export const ModeToggle = () => {
-  const { theme, setTheme } = useTheme()
+  const { theme, setTheme } = useTheme();
 
   return (
     <Button
@@ -17,5 +17,5 @@ export const ModeToggle = () => {
       <Sun className="size-4 dark:hidden" />
       <Moon className="hidden size-4 dark:block" />
     </Button>
-  )
-}
+  );
+};

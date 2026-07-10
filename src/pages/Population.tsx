@@ -4,5 +4,5 @@ export const PopulationPage = () => {
       <h1>Population</h1>
       <p>Demographics, age structure, and migration trends.</p>
     </section>
-  )
-}
+  );
+};

@@ -7,11 +7,12 @@
     <title>Hungarian Stats</title>
     <script>
       // Apply persisted theme before paint to avoid a flash of the wrong theme.
-      ;(function () {
-        var t = localStorage.getItem('hungarian-stats-theme')
-        var dark = t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)
-        document.documentElement.classList.toggle('dark', dark)
-      })()
+      (function () {
+        var t = localStorage.getItem('hungarian-stats-theme');
+        var dark =
+          t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.classList.toggle('dark', dark);
+      })();
     </script>
   </head>
   <body>

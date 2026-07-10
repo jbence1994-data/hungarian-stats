@@ -1,23 +1,23 @@
-import { Link, useLocation } from 'react-router'
+import { Link, useLocation } from 'react-router';
 
-import { ModeToggle } from '@/components/ModeToggle'
+import { ModeToggle } from '@/components/ModeToggle';
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-} from '@/components/ui/navigation-menu'
+} from '@/components/ui/navigation-menu';
 
-import { cn } from '@/lib/utils'
+import { cn } from '@/lib/utils';
 
 const links = [
   { label: 'Overview', to: '/' },
   { label: 'Population', to: '/population' },
   { label: 'Economy', to: '/economy' },
-]
+];
 
 export const Navbar = () => {
-  const { pathname } = useLocation()
+  const { pathname } = useLocation();
 
   return (
     <header className="border-b">
@@ -47,5 +47,5 @@ export const Navbar = () => {
         </div>
       </div>
     </header>
-  )
-}
+  );
+};
