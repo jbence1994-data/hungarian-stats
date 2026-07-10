@@ -32,7 +32,10 @@ export const Navbar = () => {
                 <NavigationMenuItem key={link.to}>
                   <NavigationMenuLink
                     render={<Link to={link.to} />}
-                    className={cn(pathname === link.to && 'bg-muted/50')}
+                    className={cn(
+                      'hover:bg-transparent focus:bg-transparent data-active:bg-transparent data-active:hover:bg-transparent data-active:focus:bg-transparent',
+                      pathname === link.to && 'font-bold',
+                    )}
                   >
                     {link.label}
                   </NavigationMenuLink>
