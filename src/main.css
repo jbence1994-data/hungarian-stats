@@ -156,9 +156,9 @@
     @apply flex flex-col gap-4;
   }
   h1 {
-    @apply text-4xl font-semibold text-nova-600 dark:text-nova-400;
+    @apply text-4xl font-semibold text-foreground;
   }
   p {
-    @apply text-nova-950/70 dark:text-nova-100/70;
+    @apply text-foreground/70;
   }
 }

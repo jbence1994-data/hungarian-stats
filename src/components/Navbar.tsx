@@ -22,7 +22,7 @@ export const Navbar = () => {
   return (
     <header className="border-b">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4">
-        <Link to="/" className="text-lg font-semibold text-nova-600 dark:text-nova-400">
+        <Link to="/" className="text-lg font-semibold text-foreground">
           Hungarian Stats
         </Link>
         <div className="flex items-center gap-2">
