@@ -149,3 +149,16 @@
     @apply font-sans;
   }
 }
+
+/* Base typography defaults for content elements. */
+@layer base {
+  section {
+    @apply flex flex-col gap-4;
+  }
+  h1 {
+    @apply text-4xl font-semibold text-nova-600 dark:text-nova-400;
+  }
+  p {
+    @apply text-nova-950/70 dark:text-nova-100/70;
+  }
+}

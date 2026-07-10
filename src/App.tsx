@@ -1,9 +1,20 @@
+import { Route, Routes } from 'react-router'
+
+import { Layout } from '@/components/Layout'
+
+import { EconomyPage } from '@/pages/Economy'
+import { OverviewPage } from '@/pages/Overview'
+import { PopulationPage } from '@/pages/Population'
+
 const App = () => {
   return (
-    <main className="flex min-h-svh flex-col items-center justify-center gap-4 font-sans">
-      <h1 className="text-4xl font-semibold text-nova-600 dark:text-nova-400">Hungarian Stats</h1>
-      <p className="text-nova-950/70 dark:text-nova-100/70">Tailwind CSS ready — Nova theme.</p>
-    </main>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route index element={<OverviewPage />} />
+        <Route path="population" element={<PopulationPage />} />
+        <Route path="economy" element={<EconomyPage />} />
+      </Route>
+    </Routes>
   )
 }
 
