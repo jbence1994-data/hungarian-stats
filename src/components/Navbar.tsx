@@ -42,7 +42,8 @@ const Navbar = () => {
                 <NavigationMenuTrigger
                   className={cn(
                     'hover:bg-transparent focus:bg-transparent data-open:bg-transparent data-open:hover:bg-transparent data-open:focus:bg-transparent data-popup-open:bg-transparent data-popup-open:hover:bg-transparent',
-                    pathname === '/inflation-rate' && 'font-bold',
+                    (pathname === '/inflation-rate' || pathname === '/huf-interest-rate') &&
+                      'font-bold',
                   )}
                 >
                   Economy
@@ -53,6 +54,12 @@ const Navbar = () => {
                     className={linkClass(pathname === '/inflation-rate')}
                   >
                     Inflation Rate
+                  </NavigationMenuLink>
+                  <NavigationMenuLink
+                    render={<Link to="/huf-interest-rate" />}
+                    className={linkClass(pathname === '/huf-interest-rate')}
+                  >
+                    HUF Interest Rate
                   </NavigationMenuLink>
                 </NavigationMenuContent>
               </NavigationMenuItem>
