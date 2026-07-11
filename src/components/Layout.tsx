@@ -1,8 +1,8 @@
 import { Outlet } from 'react-router';
 
-import { Navbar } from '@/components/Navbar';
+import Navbar from '@/components/Navbar';
 
-export const Layout = () => {
+const Layout = () => {
   return (
     <div className="min-h-svh font-sans">
       <Navbar />
@@ -12,3 +12,5 @@ export const Layout = () => {
     </div>
   );
 };
+
+export default Layout;

@@ -10,7 +10,7 @@ const getInitialTheme = (): Theme => {
   return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 };
 
-export const ThemeProvider = ({ children }: { children: ReactNode }) => {
+const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [theme, setThemeState] = useState<Theme>(getInitialTheme);
 
   useEffect(() => {
@@ -24,3 +24,5 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
 
   return <ThemeContext value={{ theme, setTheme }}>{children}</ThemeContext>;
 };
+
+export default ThemeProvider;
