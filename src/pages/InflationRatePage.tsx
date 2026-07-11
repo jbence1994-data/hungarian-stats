@@ -33,6 +33,12 @@ const data = inflation.map((point) => ({
   date: `${point.year}-${String(point.month).padStart(2, '0')}`,
 }));
 
+const maxPoint = inflation.reduce((a, b) => (b.sum.prevYear > a.sum.prevYear ? b : a));
+const minPoint = inflation.reduce((a, b) => (b.sum.prevYear < a.sum.prevYear ? b : a));
+
+const formatWhen = (point: { year: number; month: number }) =>
+  `${MONTHS_SHORT[point.month - 1]} ${point.year}`;
+
 const InflationRatePage = () => {
   return (
     <section>
@@ -57,7 +63,7 @@ const InflationRatePage = () => {
                   : MONTHS_SHORT[Number(month) - 1];
               }}
             />
-            <YAxis unit="%" />
+            <YAxis unit="%" domain={[0, 50]} />
             <Tooltip
               content={<InflationTooltip color={CHART_COLOR} />}
               cursor={{ stroke: CHART_COLOR, strokeOpacity: 0.35 }}
@@ -76,6 +82,22 @@ const InflationRatePage = () => {
           </LineChart>
         </ResponsiveContainer>
       </div>
+      <dl className="flex gap-10">
+        <div className="flex flex-col gap-1">
+          <dt className="text-xs text-muted-foreground">Highest</dt>
+          <dd className="font-semibold text-foreground">
+            {maxPoint.sum.prevYear.toFixed(1)}%{' '}
+            <span className="font-normal text-muted-foreground">({formatWhen(maxPoint)})</span>
+          </dd>
+        </div>
+        <div className="flex flex-col gap-1">
+          <dt className="text-xs text-muted-foreground">Lowest</dt>
+          <dd className="font-semibold text-foreground">
+            {minPoint.sum.prevYear.toFixed(1)}%{' '}
+            <span className="font-normal text-muted-foreground">({formatWhen(minPoint)})</span>
+          </dd>
+        </div>
+      </dl>
     </section>
   );
 };
