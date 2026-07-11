@@ -4,7 +4,7 @@ import { useTheme } from '@/lib/theme';
 
 import { Moon, Sun } from 'lucide-react';
 
-export const ModeToggle = () => {
+const ModeToggle = () => {
   const { theme, setTheme } = useTheme();
 
   return (
@@ -19,3 +19,5 @@ export const ModeToggle = () => {
     </Button>
   );
 };
+
+export default ModeToggle;

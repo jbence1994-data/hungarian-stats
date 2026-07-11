@@ -1,4 +1,4 @@
-export const OverviewPage = () => {
+const OverviewPage = () => {
   return (
     <section>
       <h1>Overview</h1>
@@ -6,3 +6,5 @@ export const OverviewPage = () => {
     </section>
   );
 };
+
+export default OverviewPage;

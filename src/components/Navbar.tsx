@@ -1,22 +1,24 @@
 import { Link, useLocation } from 'react-router';
 
-import { ModeToggle } from '@/components/ModeToggle';
+import ModeToggle from '@/components/ModeToggle';
 import {
   NavigationMenu,
+  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
+  NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu';
 
 import { cn } from '@/lib/utils';
 
-const links = [
-  { label: 'Overview', to: '/' },
-  { label: 'Population', to: '/population' },
-  { label: 'Economy', to: '/economy' },
-];
+const linkClass = (active: boolean) =>
+  cn(
+    'hover:bg-transparent focus:bg-transparent data-active:bg-transparent data-active:hover:bg-transparent data-active:focus:bg-transparent',
+    active && 'font-bold',
+  );
 
-export const Navbar = () => {
+const Navbar = () => {
   const { pathname } = useLocation();
 
   return (
@@ -28,19 +30,32 @@ export const Navbar = () => {
         <div className="flex items-center gap-2">
           <NavigationMenu>
             <NavigationMenuList>
-              {links.map((link) => (
-                <NavigationMenuItem key={link.to}>
+              <NavigationMenuItem>
+                <NavigationMenuLink
+                  render={<Link to="/" />}
+                  className={linkClass(pathname === '/')}
+                >
+                  Overview
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger
+                  className={cn(
+                    'hover:bg-transparent focus:bg-transparent data-open:bg-transparent data-open:hover:bg-transparent data-open:focus:bg-transparent data-popup-open:bg-transparent data-popup-open:hover:bg-transparent',
+                    pathname === '/inflation-rate' && 'font-bold',
+                  )}
+                >
+                  Economy
+                </NavigationMenuTrigger>
+                <NavigationMenuContent className="w-48">
                   <NavigationMenuLink
-                    render={<Link to={link.to} />}
-                    className={cn(
-                      'hover:bg-transparent focus:bg-transparent data-active:bg-transparent data-active:hover:bg-transparent data-active:focus:bg-transparent',
-                      pathname === link.to && 'font-bold',
-                    )}
+                    render={<Link to="/inflation-rate" />}
+                    className={linkClass(pathname === '/inflation-rate')}
                   >
-                    {link.label}
+                    Inflation Rate
                   </NavigationMenuLink>
-                </NavigationMenuItem>
-              ))}
+                </NavigationMenuContent>
+              </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
           <ModeToggle />
@@ -49,3 +64,5 @@ export const Navbar = () => {
     </header>
   );
 };
+
+export default Navbar;
